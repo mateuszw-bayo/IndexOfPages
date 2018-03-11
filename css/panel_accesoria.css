@@ -1,0 +1,146 @@
+@media only screen and (min-width: 800px)
+{
+
+	
+	#Panel_p ul li
+	{
+		font-size: 32px;
+		padding: auto;
+		margin: auto;
+		vertical-align: middle;
+		width: 32px;
+		list-style-type: none;
+		text-align: center;
+	}
+	#Panel_p span
+	{
+		display: inline-block;
+		height: 32px;
+		vertical-align: middle;
+		line-height: 32px;
+	}
+
+
+	#Panel_p a
+	{
+		color: #F7F7F7;
+		border: 0px #2E2E2E solid;
+		background-color: #454744;
+		font-family: Arial;
+		font-weight: normal;
+		font-size: 13px;
+		font-style: normal;
+		text-decoration: none;
+	}
+
+
+	#Panel_p a:hover
+	{
+		color: #AAA;
+	}
+}
+
+
+
+@media only screen and (max-width: 800px)
+{
+	
+	#Panel_p ul li
+	{
+		font-size: 32px;
+		padding: auto;
+		margin: auto;
+		vertical-align: middle;
+		width: 32px;
+		list-style-type: none;
+		text-align: center;
+	}
+	#Panel_p span
+	{
+		display: inline-block;
+		height: 32px;
+		vertical-align: middle;
+		line-height: 32px;
+	}
+
+
+	#Panel_p a
+	{
+		color: #F7F7F7;
+		border: 0px #2E2E2E solid;
+		background-color: #454744;
+		font-family: Arial;
+		font-weight: normal;
+		font-size: 13px;
+		font-style: normal;
+		text-decoration: none;
+	}
+
+
+	#Panel_p a:hover
+	{
+		color: #AAA;
+	}
+}
+
+
+
+#Panel_p input[type='text'], #Panel_p input[type='password']
+{
+	border: 1px #CCCCCC solid;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	color :#000000;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 13px;
+	padding: 4px 4px 4px 4px;
+	text-align: left;
+	vertical-align: middle;
+	width: 180px;
+	margin: 5px 0px 0px;
+}
+
+#Panel_p input[type='submit'], #Panel_p button
+{
+	border: 1px #CCCCCC solid;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	color :#000000;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 4px 4px 4px 4px;
+	margin: 10px;
+}
+
+
+#Panel_p p
+{
+	color :#FFF;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 13px;
+	padding: 4px 4px 4px 4px;
+}
+
+#Panel_p textarea
+{
+	border: 1px #CCCCCC solid;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 13px;
+	padding: 4px 4px 4px 4px;
+	text-align: left;
+	overflow: auto;
+	resize: none;
+}
+
+#Panel_p h3
+{
+	color: #CCCCCC;
+	font-size: 25px;
+
+}

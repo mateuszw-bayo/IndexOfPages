@@ -22,7 +22,7 @@ class Admin extends CI_Controller {
 
 				$this->load->model('model_config');
 				$this->load->model('M_admin');
-				$this->load->model('Prod');
+
 				
 				// configuracja strony...
 				$ttt = $this->model_config->cfg_general();
@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
 				
 
 				// wyszukanie produktow !
-				$item = $this->Prod->prodd(1,1);
+				$item ="";
 				$z['ttt'] = $item;
 				
 

@@ -64,3 +64,23 @@ CREATE TABLE `Str_kont` (
 
 
 
+
+CREATE TABLE `Url_link` (
+      `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+      `open` int(13) NOT NULL default '0',
+      `name` VARCHAR(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+      `url` VARCHAR(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+      `page` VARCHAR(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+      `color` VARCHAR(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+      `icone` VARCHAR(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+      `id_user` int(13) NOT NULL default '0',
+      `apl` int(13) NOT NULL default '0',
+      `age` int(13) NOT NULL default '0',
+      `ip` VARCHAR(50) CHARACTER SET utf16 COLLATE utf16_polish_ci NOT NULL,
+      PRIMARY KEY (`id`)
+   )
+   ENGINE=MyISAM DEFAULT CHARACTER SET utf16
+    COLLATE utf16_polish_ci AUTO_INCREMENT=0;
+
+
+

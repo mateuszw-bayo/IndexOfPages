@@ -1,0 +1,95 @@
+
+@media only screen and (min-width: 800px)
+{
+	#background_p
+	{
+	   display: none;
+	   position: absolute;
+	   position: fixed;
+	   top: 0;
+	   height: 100%;
+	   width: 100%;
+	   z-index: 9999;
+	   float: right;
+	}
+
+
+	#body_black
+	{
+	   position: fixed;
+	   float: left;
+	   width: 75%;
+	   height: 100%;
+	   background-color: #000000;
+	   opacity: 0.5;
+	   z-index: 2;
+	}
+
+
+	#Panel_p
+	{
+		float: right;
+		width: 25%;
+		height: 100%;
+	}
+
+	#Panel_p
+	{
+	   background-color: #454744;
+	   overflow-y: auto;
+	}
+
+
+
+
+}
+
+
+@media only screen and (max-width: 800px)
+{
+	#background_p
+	{
+	   display: none;
+	   position: absolute;
+	   position: fixed;
+	   top: 0;
+	   height: 100%;
+	   width: 100%;
+	   z-index: 9999;
+	   float: right;
+	}
+
+
+	#body_black
+	{
+	   position: fixed;
+	   float: left;
+	   width: calc(100% - 220px);
+	   height: 100%;
+	   background-color: #000000;
+	   opacity: 0.5;
+	   z-index: 2;
+	}
+
+
+	#Panel_p
+	{
+		float: right;
+		width: 220px;
+		height: 100%;
+	}
+
+
+
+	}
+	#Panel_p
+	{
+	   background-color: #454744;
+	   overflow-y: auto;
+	}
+
+
+}
+
+
+
