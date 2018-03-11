@@ -2,7 +2,7 @@
 	<div class="r-top">
 		<div class='top'>
 			<span>
-				<img src="/GitHub/IndexOfPages/img/logo.png" >
+				<img src="/img/logo.png" >
 			</span>
 			<p style="text-align: right;">
 				<!--<a  onclick='ustbrackground(0)'>Tlo1</a>

@@ -34,6 +34,62 @@ class Panel_adm extends CI_Model
 
 			if($param['passU'] == $param['passU2'] && empty($id))
 			{
+				
+				$pass = md5($param['passU']);
+				$akt = 0;
+
+				$sql = "INSERT INTO `User`(`id_u`, `Login`, `Password`, `Akt`) VALUES (NULL,'$log','$pass',$akt)";
+
+				$q = $this->db->query($sql);
+				$info = "Konto : '$log' Utworzone";
+				
+			}
+			else if(!empty($id))
+			{
+				$info = "Login juz istnieje";
+			}
+			else
+			{
+				$info = "Popraw Hasło";
+			}
+			return $info;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+
+
+
+	/**
+	*	======================================================
+	*		tworzenie konta user Admin
+	*	======================================================
+	*	@access public
+	*	@param
+	*	@var
+	**/
+	public function Add_UserA($param)
+	{
+		if(is_array($param))
+		{
+			$log = $param['logU'];
+
+			$sql = "SELECT `id_u` FROM `User` WHERE `Login` = '$log'";
+			$q2 = $this->db->query($sql);
+			$qq = $q2->result_array();
+			if(is_array($qq) && !empty($qq[0]['id_u']))
+			{
+				$id = $qq[0]['id_u'];
+			}
+			else
+			{
+				$id = "";
+			}
+
+			if($param['passU'] == $param['passU2'] && empty($id))
+			{
 
 				
 				$pass = md5($param['passU']);
@@ -78,6 +134,8 @@ class Panel_adm extends CI_Model
 	}
 
 
+
+
 	/**
 	*	======================================================
 	*		Logowanie sie na konto user
@@ -95,8 +153,10 @@ class Panel_adm extends CI_Model
 			$sql = "SELECT `id_u`, `Akt` FROM `User` WHERE `Login` = '$log' AND `Password` = '$pass'";
 			$q2 = $this->db->query($sql);
 			$qq = $q2->result_array();
+			echo "1";
 			if(is_array($qq) && !empty($qq[0]['id_u']))
 			{
+				echo "2";
 				$id = $qq[0]['id_u'];
 				$Akt = $qq[0]['Akt'];
 
@@ -107,15 +167,20 @@ class Panel_adm extends CI_Model
 				{
 					$Ranga = $q[0]['Ranga'];
 					$_array_session['A_range'] = $Ranga;
+					echo "3";
 				}
 
 				if($Akt)
 				{
+					echo "4";
 					$_array_session['user_Akt'] = $Akt;
 				}
 
 				$_array_session['user'] = TRUE;
 				$_array_session['user_id'] = $id;
+				echo "<br />";
+					var_dump($_array_session);
+				echo "<br />";
 				$this->session->set_userdata($_array_session);
 				$info = 2;
 

@@ -25,10 +25,12 @@ class wwwconf extends CI_Controller {
 		// sprawdzanie czy jest zalogowany
 		if($this->session->userdata('user'))
 		{
+
+			$profil['U'] = $this->session->userdata('user');
 			if($this->session->userdata('A_range'))
 			{
 				$profil['A'] = $this->session->userdata('A_range');
-				$profil['U'] = $this->session->userdata('user');
+				
 			}
 
 			$panel = "panel/menu";
@@ -45,9 +47,9 @@ class wwwconf extends CI_Controller {
 		else
 		{
 			$panel = "panel/menu";
-			$cb_s = "formularze/4_admin";
+			$cb_s = "formularze/4_rejestracja";
 		}
-		$cb_s = "formularze/4_admin";
+		//$cb_s = "formularze/4_rejestracja";
 		//$cb_s = "formularze/4_klijent";
 
 		// configuracja do strony...
@@ -72,7 +74,7 @@ class wwwconf extends CI_Controller {
 
 		
 
-	//echo "user - " . $this->session->userdata('user') . "<br /> A_range : " . $this->session->userdata('A_range') . "<br /> user_Akt : " . $this->session->userdata('user_Akt') . "<br /> user_id : " . $this->session->userdata('user_id');
+	//echo "user - " . $this->session->userdata('user') . "<br /> user_id : " . $this->session->userdata('user_id');
 
 	}
 

@@ -49,11 +49,29 @@ class Action_panel extends CI_Controller {
 		$this->load->model('Panel_adm');
 		if(!empty($_POST))
 		{
-			if($_POST['logA'] == "ADM09" && $_POST['passA'] == "1j2hgsAE")
+			if(!empty($_POST['logA']))
+			{
+				if($_POST['logA'] == "ADM09" && $_POST['passA'] == "1j2hgsAE")
+				{
+
+					$a = $this->Panel_adm->Add_UserA($_POST);
+
+					echo $a;
+				}
+				else
+				{
+					echo "ERROR - Blad przy zakladaniu konta.";
+				}
+			}
+			else if(empty($_POST['logA']))
 			{
 				$a = $this->Panel_adm->Add_User($_POST);
 
 				echo $a;
+			}
+			else
+			{
+				echo "ERROR - Blad przy zakladaniu konta.";
 			}
 		}
 	}
@@ -97,13 +115,14 @@ class Action_panel extends CI_Controller {
 		{
 			
 			$a = $this->Panel_adm->Log_User($_POST);
-			if($a == 1)
+			if($a == 2)
 			{
 				header("Location: /index.php/");
 			}
 			else
 			{
-				header("Location: /");
+				echo "Nie udalo sie zalogowac.";
+				//header("Location: /");
 			}
 			
 		}	

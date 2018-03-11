@@ -33,6 +33,10 @@ class P_ajax extends CI_Controller {
 			$profil['A'] = $this->session->userdata('A_range');
 			$profil['U'] = $this->session->userdata('user');
 		}
+		else if($this->session->userdata('user'))
+		{
+			$profil['U'] = $this->session->userdata('user');
+		}
 
 
 		if($param == "P_login")
