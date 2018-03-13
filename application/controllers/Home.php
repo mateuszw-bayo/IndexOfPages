@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class wwwconf extends CI_Controller {
+class home extends CI_Controller {
 
 
 	public function index()
@@ -12,12 +12,8 @@ class wwwconf extends CI_Controller {
 		$this->load->model('model_config');
 	
 		$a = "";
-
-
 		// configuracja strony...
 		$ttt = $this->model_config->cfg_general();
-		//var_dump($ttt);
-		
 
 		$profil['A'] = "";
 		$profil['U'] = "";

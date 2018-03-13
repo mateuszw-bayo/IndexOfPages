@@ -20,4 +20,5 @@
 		<br />
 		<input type="submit" name="" value=" Tworzenie konta " >
 	</form>
+	<a href="/" style="color: #111;">Cofnij</a>
 </div>
