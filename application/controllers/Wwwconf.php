@@ -41,7 +41,7 @@ class wwwconf extends CI_Controller {
 			else
 			{
 				//$cb_s = "formularze/4_klijent";
-				$cb_s = "formularze/5_proedyt";
+				$cb_s = "body/03_menu_body";
 			}
 		}
 		else
@@ -75,7 +75,7 @@ class wwwconf extends CI_Controller {
 
 		
 
-	//echo "user - " . $this->session->userdata('user') . "<br /> user_id : " . $this->session->userdata('user_id');
+		//echo "user - " . $this->session->userdata('user') . "<br /> user_id : " . $this->session->userdata('user_id');
 
 	}
 

@@ -1,44 +1,61 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class setting extends CI_Controller {
+class info extends CI_Controller {
 
 
-	public function index()
+	public function index($param = FALSE)
 	{
 		$this->load->database();
 		$this->load->library('session');
 		$this->load->helper('cookie');
+		$this->load->model('model_config');
+	
+		$a = "";
+
+
+		// configuracja strony...
+		$ttt = $this->model_config->cfg_general();
+		//var_dump($ttt);
 		
-		// sprawdzanie czy jest zalogowany
-		if($this->session->userdata('user'))
-		{
+
+		$profil['A'] = "";
+		$profil['U'] = "";
+
 			
-			$this->load->model('model_config');
-			$a = "";
+		if($param == "Omnie")
+		{
+			$cb_s = "body/04_inf_omnie";
+		}
+		else if($param == "Regu")
+		{
+			$cb_s = "body/04_inf_regulamin";
+		}
+		else
+		{
+			$cb_s = "";
+			header("Location: /");
+		}
 
-			// configuracja strony...
-			$ttt = $this->model_config->cfg_general();
-
-			$profil['A'] = "";
-			$profil['U'] = "";
-
-			$profil['U'] = $this->session->userdata('user');
-			if($this->session->userdata('A_range'))
+		if(!empty($cb_s))
+		{
+			// sprawdzanie czy jest zalogowany
+			if($this->session->userdata('user'))
 			{
-				$profil['A'] = $this->session->userdata('A_range');	
-			}
 
-			$panel = "panel/menu";
-			if($this->session->userdata('user_Akt') == 1)
-			{
-				$cb_s = "formularze/4_nowehaslo";
+				$profil['U'] = $this->session->userdata('user');
+				if($this->session->userdata('A_range'))
+				{
+					$profil['A'] = $this->session->userdata('A_range');
+				}
+
+				$panel = "panel/menu";
 			}
 			else
 			{
-				//$cb_s = "formularze/4_klijent";
-				$cb_s = "formularze/4_klijent";
+				$panel = "panel/menu";
 			}
+
 
 			// configuracja do strony...
 			$conf_header = $ttt['header'];
@@ -53,17 +70,13 @@ class setting extends CI_Controller {
 			$conf_footer = $ttt['footer'];
 
 
+
+
+
 			$this->load->view("header/conf_header", $conf_header);
 			$this->load->view("body/conf_body", $conf_body);
 			$this->load->view("footer/conf_footer", $conf_footer);
-
-
 		}
-		else
-		{
-			header("Location: /");
-		}
-
 	}
 
 

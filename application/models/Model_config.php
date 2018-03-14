@@ -44,7 +44,7 @@ class Model_config extends CI_Model
 		//menu strony
 		$teamp['body']['menu'][0]['url'] = "/index.php"; // url
 		$teamp['body']['menu'][0]['name'] = "Konto"; // nazwa
-		$teamp['body']['menu'][1]['url'] = "/index.php"; 
+		$teamp['body']['menu'][1]['url'] = "/index.php/info/index/Omnie"; 
 		$teamp['body']['menu'][1]['name'] = "O mnie"; 
 		$teamp['body']['menu'][2]['url'] = "/index.php"; // url
 		$teamp['body']['menu'][2]['name'] = "Kontakt"; // nazwa
@@ -56,7 +56,7 @@ class Model_config extends CI_Model
 
 
 		//footer
-		$teamp['footer']['footer_text'] = "&copy Wpisane z pliku config"; // 
+		$teamp['footer']['footer_text'] = "&copy Wpisane z pliku config<br />Utworzony przez Mateusz Wróbel<br /><a href='/index.php/info/index/Omnie' >O mnie</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href='/index.php/info/index/Regu' >Regulamin</a>"; // 
 
 
 		return $teamp;

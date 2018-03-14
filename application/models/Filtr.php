@@ -65,8 +65,7 @@ class Filtr extends CI_Model
 		}
 		else
 		{
-			$p['boot'] = FALSE;
-			return $p;
+			return  FALSE;
 		}
 	}
 
