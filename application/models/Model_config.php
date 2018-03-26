@@ -38,6 +38,8 @@ class Model_config extends CI_Model
 		
 		$teamp['header']['script'][] = "/js/baner_r.js";
 		$teamp['header']['script'][] = "/js/str.js";
+		$teamp['header']['script'][] = "/js/cjs.js";
+		
 		
 
 

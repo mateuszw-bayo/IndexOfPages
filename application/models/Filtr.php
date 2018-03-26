@@ -110,7 +110,7 @@ class Filtr extends CI_Model
 	*/
 	public function filtr_code($param)
 	{
-		if(preg_match("/[a-zA-Z0-9]{9,10}$/", $param))
+		if(preg_match("/[a-zA-Z0-9]{5,}$/", $param))
 		{
 			return TRUE;
 		}
@@ -120,5 +120,93 @@ class Filtr extends CI_Model
 		}
 	}
 
+
+	/**
+	*	================================================
+	*
+	*	================================================
+	*	
+	*	@author Mateusz Wrobel
+	*	@access public
+	*	@param string(code)
+	*	@return
+	*	@var BOOT
+	*/
+	public function filtr_www($param)
+	{
+		if(preg_match('/[a-zA-Z0-9\.\-\_]+\.[a-z]{2,8}$/D', $param))
+		{
+
+			return $param;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+
+
+
+
+
+
+		/**
+	*	==============================================
+	*
+	*	==============================================
+	*
+	*	@author Mateusz Wrobel < bayomw@gmail.com >
+	*	@access public
+	*	@param string(text)
+	*	@return
+	*	@var BOOT
+	**/
+	public function filtr_color($param)
+	{
+		if(preg_match('/^\#[a-fA-F0-9]{4,7}+$/D', $param))
+		{
+			return $param;
+		}
+		else
+		{
+			return  FALSE;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	*	======================================================
+	*		wyswietlenie IP usera
+	*	======================================================
+	*
+	*
+	**/
+	public function filtr_ip()
+	{
+
+		if(!empty($_SERVER['HTTP_CLIENT_IP']))
+		{
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		}
+		else if(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+		{
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		else
+		{
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+
+		return $ip;
+	}
 }
 

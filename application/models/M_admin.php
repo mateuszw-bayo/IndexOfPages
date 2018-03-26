@@ -25,7 +25,7 @@ class M_admin extends CI_Model
 			if (is_numeric($param))
 			{
 				
-				$sql2 = "SELECT COUNT(id_u) FROM `user`";
+				$sql2 = "SELECT COUNT(id_u) FROM `User`";
 				$qq = $this->db->query($sql2);
 				$qq2 = $qq->result_array();
 				$temp['ilo'] = $qq2[0]['COUNT(id_u)'];
@@ -35,11 +35,11 @@ class M_admin extends CI_Model
 
 				if($l <= 0 && $l < $qq2[0]['COUNT(id_u)'])
 				{
-					$sql = "SELECT user.id_u, user.Login, user.Akt, user_dmin.Ranga FROM `user` LEFT JOIN `user_dmin` ON user.id_u = user_dmin.id_u LIMIT 10 ";
+					$sql = "SELECT User.id_u, User.Login, User.Akt, User_dmin.Ranga FROM `User` LEFT JOIN `User_dmin` ON User.id_u = User_dmin.id_u LIMIT 10 ";
 				}
 				else
 				{
-					$sql = "SELECT user.id_u, user.Login, user.Akt, user_dmin.Ranga  FROM `user` LEFT JOIN `user_dmin` ON user.id_u = user_dmin.id_u LIMIT 10 , $l";
+					$sql = "SELECT User.id_u, User.Login, User.Akt, User_dmin.Ranga  FROM `User` LEFT JOIN `User_dmin` ON User.id_u = User_dmin.id_u LIMIT 10 , $l";
 				}
 			}
 			
@@ -55,7 +55,7 @@ class M_admin extends CI_Model
 			$temp['ilo'] = $qq2[0]['COUNT(id_u)'];
 
 
-			$sql = "SELECT user.id_u, user.Login, user.Akt, user_dmin.Ranga  FROM `user` LEFT JOIN `user_dmin` ON user.id_u = user_dmin.id_u LIMIT 10 ";
+			$sql = "SELECT User.id_u, User.Login, User.Akt, User_dmin.Ranga  FROM `User` LEFT JOIN `User_dmin` ON User.id_u = User_dmin.id_u LIMIT 10 ";
 		}
 		
 
@@ -222,7 +222,7 @@ class M_admin extends CI_Model
 
 			if($error == 0)
 			{
-				$sql = "INSERT INTO `str_conf`(`id`, `typ_n`, `typ_t`, `akcia`, `opis`, `tresc`) 
+				$sql = "INSERT INTO `Str_conf`(`id`, `typ_n`, `typ_t`, `akcia`, `opis`, `tresc`) 
 				VALUES (NULL,'$typN','$typT','$akcia','$opis','$tresc')";
 
 				$q = $this->db->query($sql);

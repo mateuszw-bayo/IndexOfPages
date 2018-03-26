@@ -1,6 +1,6 @@
 
 <div class="White">
-	<form name="Form1" class='form' method="post" action="/GitHub/IndexOfPages/index.php/action_panel/twoKK"  >
+	<form name="Form1" class='form' method="post" action="/index.php/action_panel/twoKK"  >
 		<Br /><br />
 		<p>Dane Użydkownika</p>
 		<div class='br'>

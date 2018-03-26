@@ -31,7 +31,6 @@
 
 	?>
 
-	<script type="text/javascript" src="js/cjs.js"></script>
 </head>
 <body>
 <div id="background_p" style="display: none;">

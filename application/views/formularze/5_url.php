@@ -1,6 +1,7 @@
+<br />
 <div class="White">
-	<form name="Form1" class='form' method="post" action="/GitHub/IndexOfPages/index.php/action_panel/twoKK"  >
-		<Br /><br />
+	<form name="Form1" class='form' method="post" action="/index.php/mlist/A_add/"  >
+		<Br />
 		<p>Dane Użydkownika</p>
 		<div class='br'>
 			<label for="">Nazwa</label>
