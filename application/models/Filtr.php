@@ -136,12 +136,28 @@ class Filtr extends CI_Model
 	{
 		if(preg_match('/[a-zA-Z0-9\.\-\_]+\.[a-z]{2,8}$/D', $param))
 		{
-
 			return $param;
 		}
 		else
 		{
-			return FALSE;
+			$b = substr($param, 0 , 7); 
+
+			if($b == "http://" || $b == "https:/")
+			{
+				if(preg_match("@^(?:http://)?([^/]+)@i", $param))
+				{
+					return $param;
+				}
+				else
+				{
+					return FALSE;
+				}
+				
+			}
+			else
+			{
+				return FALSE;
+			}
 		}
 	}
 

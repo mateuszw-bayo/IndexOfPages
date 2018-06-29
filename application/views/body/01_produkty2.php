@@ -13,7 +13,7 @@
 	{
 		if(is_array($value))
 		{
-			$ka = "<a href='#" . $key . "'>";
+			$ka = "<a href='#p_t" . $key;
 			$id = $key;
 			foreach ($value as $key2 => $value2) 
 			{
@@ -48,7 +48,9 @@
 				}
 				
 			}
-			$pppk .=  "<div class='k' id='pro_k" . $id . "' >" . $ka . "<br />" . $kI .  "<br /><p><b>" . $kn . "</b><br /> " . $ko . " - " . $kt . "<br />". $pppt . "</p></div></a>";
+			$pppk .=  "<div class='k' id='pro_k" . $id . "' ><div>" . $ka . "' onclick='Katal_pro(" . $id . ")'><br />" . $kI .  "<br /><p><b>" . $kn . "</b><br /> "  . "". $pppt . "</p></a></div><div class='kopis' id='p_t" . $id . "' style='max-width: 500px; min-width: 250px;'> </div></div>";
+
+			// . $ko . " - " . $kt
 
 			$pppt = "";
 		}

@@ -31,6 +31,9 @@
 
 	?>
 
+	<meta name="handheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="240">
+	<meta name="viewport" content="width=device-width; initial-scale=1" />
 </head>
 <body>
 <div id="background_p" style="display: none;">
